@@ -1,5 +1,5 @@
 #
-# Copyright 2001,2007,2009 Free Software Foundation, Inc.
+# Copyright 2009 Free Software Foundation, Inc.
 # 
 # This file is part of GNU Radio
 # 
@@ -19,8 +19,31 @@
 # Boston, MA 02110-1301, USA.
 # 
 
-SUBDIRS = misc lib include apps
+include $(top_srcdir)/Makefile.common
+
+usrpincludedir = $(includedir)/usrp
+
+usrpinclude_HEADERS = \
+	db_base.h \
+	db_basic.h \
+	db_dbs_rx.h \
+	db_dtt754.h \
+	db_dtt768.h \
+	db_flexrf.h \
+	db_flexrf_mimo.h \
+	db_tv_rx.h \
+	db_xcvr2450.h \
+	usrp_basic.h \
+	usrp_bytesex.h \
+	usrp_dbid.h \
+	usrp_local_sighandler.h \
+	usrp_prims.h \
+	usrp_slots.h \
+	usrp_standard.h \
+	usrp_subdev_spec.h \
+	usrp_tune_result.h
 
 if PYTHON
-SUBDIRS += swig
-endif 
+swiginclude_HEADERS = \
+	db_base.i
+endif
