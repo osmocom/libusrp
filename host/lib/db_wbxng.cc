@@ -86,7 +86,7 @@ wbxng_base::set_freq(double freq)
   nanosleep(&t, NULL);
 
   fprintf(stderr,"Setting WBXNG frequency, requested %d, obtained %f, lock_detect %d\n",
-          int_freq, freq_result, _lock_detect());
+          int_freq, freq_result, d_common->_get_locked());
 
   // FIXME
   // Offsetting the LO helps get the Tx carrier leakage out of the way.

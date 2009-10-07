@@ -41,12 +41,6 @@ public:
 
 protected:
   bool _lock_detect();
-
-  //virtual bool _compute_regs(double freq, int &retR, int &retcontrol, int &retN, double &retfreq);
-  int  _compute_control_reg();
-  int _refclk_divisor();
-  double _refclk_freq();
-
   bool _set_pga(float pga_gain);
 
   int power_on() { return d_power_on; }
