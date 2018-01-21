@@ -31,16 +31,9 @@ libusrp_la_common_LIBADD = 		\
 	$(BOOST_THREAD_LIB)		\
 	../misc/libmisc.la
 
-# darwin fusb requires gruel (for threading)
-if FUSB_TECH_darwin
-AM_CPPFLAGS = $(GRUEL_INCLUDES) $(common_INCLUDES) $(BOOST_CPPFLAGS) $(WITH_INCLUDES)
-libusrp_la_LIBADD = $(libusrp_la_common_LIBADD) $(GRUEL_LA)
-libusrp_la_LDFLAGS = $(libusrp_la_common_LDFLAGS) -framework CoreFoundation
-else
 AM_CPPFLAGS = $(common_INCLUDES) $(BOOST_CPPFLAGS) $(WITH_INCLUDES)
 libusrp_la_LIBADD = $(libusrp_la_common_LIBADD)
 libusrp_la_LDFLAGS = $(libusrp_la_common_LDFLAGS)
-endif
 
 EXTRA_DIST += 				\
 	std_paths.h.in			\
@@ -132,30 +125,7 @@ libusrp_la_common_SOURCES = 		\
 	db_dtt768.cc			\
 	db_util.cc
 
-if FUSB_TECH_generic
-libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(generic_CODE)
-endif
-
-if FUSB_TECH_darwin
-libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(darwin_CODE)
-endif
-
-if FUSB_TECH_win32
-libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(win32_CODE)
-endif
-
-if FUSB_TECH_linux
-libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(linux_CODE)
-endif
-
-if FUSB_TECH_ra_wb
-libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(ra_wb_CODE)
-endif
-
-if FUSB_TECH_libusb1
 libusrp_la_SOURCES = $(libusrp_la_common_SOURCES) $(libusb1_CODE)
-endif
-
 
 noinst_HEADERS =			\
 	ad9862.h			\

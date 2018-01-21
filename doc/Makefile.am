@@ -44,7 +44,7 @@ DOCBOOK_HTML_FILES=
 all-local: dox
 endif
 
-dist_usrp_doc_DATA = $(top_srcdir)/usrp/README
+dist_usrp_doc_DATA = $(top_srcdir)/README
 
 dox: html/index.html
 html/index.html:
@@ -54,7 +54,7 @@ html/index.html:
 docbook-html: usrp_guide.html
 
 usrp_guide.html: usrp_guide.xml
-	xmlto html-nochunks $(top_srcdir)/usrp/doc/usrp_guide.xml
+	xmlto html-nochunks $(top_srcdir)/doc/usrp_guide.xml
 
 install-data-local:
 	$(MKDIR_P) $(DESTDIR)$(usrp_docdir)/html

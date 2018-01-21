@@ -21,12 +21,14 @@
 
 include $(top_srcdir)/Makefile.common
 
+ACLOCAL_AMFLAGS = -I m4
+
 EXTRA_DIST += \
 	usrp.pc.in \
 	usrp.iss.in \
 	usrp.inf
 
-SUBDIRS = host firmware fpga doc
+SUBDIRS = host fpga
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \

@@ -1,3 +1,5 @@
+*.o
+
 /*.cache
 /*.la
 /*.lo
@@ -29,3 +31,6 @@
 /stamp-h.in
 /stamp-h1
 /usrp.iss
+/compile
+/config.guess
+/config.sub
