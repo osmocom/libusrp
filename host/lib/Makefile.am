@@ -29,6 +29,7 @@ libusrp_la_common_LDFLAGS = $(NO_UNDEFINED) $(LTVERSIONFLAGS) $(BOOST_LDFLAGS)
 libusrp_la_common_LIBADD = 		\
 	$(USB_LIBS) 			\
 	$(BOOST_THREAD_LIB)		\
+	$(BOOST_SYSTEM_LIB)		\
 	../misc/libmisc.la
 
 AM_CPPFLAGS = $(common_INCLUDES) $(BOOST_CPPFLAGS) $(WITH_INCLUDES)
