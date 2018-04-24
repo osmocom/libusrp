@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: usrp
 Description: USRP Client Side C++ interface
-Requires: @LIBUSB_PKG_CONFIG_NAME@
+Requires: libusb-1.0
 Version: @VERSION@
 Libs: -L${libdir} -lusrp
 Cflags: -I${includedir}
