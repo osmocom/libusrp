@@ -96,7 +96,7 @@ VOLK_LA = @volk_LA@
 
 # How to link in the USRP library from inside the tree
 USRP_INCLUDES = \
-	-I$(abs_top_srcdir)/ost/include \
+	-I$(abs_top_srcdir)/host/include \
 	-I$(abs_top_builddir)/host/include \
 	-I$(abs_top_srcdir)/firmware/include \
 	$(NULL)
