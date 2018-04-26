@@ -1,0 +1,50 @@
+Source: libusrp
+Priority: optional
+Maintainer: Pau Espin Pedrol <pespin@sysmocom.de>
+Build-Depends: debhelper (>=9),
+               dh-autoreconf,
+               autotools-dev,
+               autoconf,
+               automake,
+               doxygen,
+               libtool,
+               pkg-config,
+               libusb-1.0-0-dev,
+               libboost-all-dev
+Standards-Version: 3.9.8
+Section: libs
+Homepage: https://osmocom.org/projects/osmotrx/
+Vcs-Git: git://git.osmocom.org/libusrp
+Vcs-Browser: https://git.osmocom.org/libusrp
+
+Package: libusrp1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: gnuradio based driver library for the USRP1 SDR
+  Gnuradio removed libusrp as it switched to UHD support, including USRP1
+  devices. However, USRP1 on UHD doesn't support timestamps, so this library
+  remains needed for applications that use timestamps such as osmo-trx. To find
+  out how this library was forked from gnuradio, check libusrp.git commit
+  description ec6adccbbdda1a4614089aaf52f9e1bab75494e7.
+
+Package: libusrp-dev
+Section: libdevel
+Architecture: any
+Depends: libusrp1 (= ${binary:Version}), ${misc:Depends}
+Description: gnuradio based driver library for the USRP1 SDR - dev files
+
+Package: libusrp-firmware
+Architecture: any
+Depends: libusrp1 (= ${binary:Version}), ${misc:Depends}
+Description: gnuradio based driver library for the USRP1 SDR - firmware files
+
+Package: libusrp-utils
+Architecture: any
+Depends: libusrp1 (= ${binary:Version}), ${misc:Depends}
+Description: gnuradio based driver library for the USRP1 SDR - several tools
+
+Package: libusrp-doc
+Section: doc
+Architecture: all
+Depends: libusrp1 (= ${binary:Version}), ${misc:Depends}, libjs-jquery
+Description: Documentation for gnuradio based driver library for the USRP1 SDR
