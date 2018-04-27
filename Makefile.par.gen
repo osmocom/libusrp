@@ -53,6 +53,7 @@ EXTRA_DIST += stamp-sources-generate
 MOSTLYCLEANFILES += stamp-sources-generate
 
 stamp-sources-generate: $(gen_sources_deps)
+	mkdir -p $(DEPDIR)
 	@rm -f $(DEPDIR)/stamp-sources-generate-tmp
 	@touch $(DEPDIR)/stamp-sources-generate-tmp
 	$(par_gen_command)
