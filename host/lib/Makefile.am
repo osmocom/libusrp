@@ -30,7 +30,7 @@ libusrp_la_common_LIBADD = 		\
 	$(USB_LIBS) 			\
 	$(BOOST_THREAD_LIB)		\
 	$(BOOST_SYSTEM_LIB)		\
-	../misc/libmisc.la
+	$(top_builddir)/host/misc/libmisc.la
 
 AM_CPPFLAGS = $(common_INCLUDES) $(BOOST_CPPFLAGS) $(WITH_INCLUDES)
 libusrp_la_LIBADD = $(libusrp_la_common_LIBADD)
@@ -40,7 +40,7 @@ EXTRA_DIST += 				\
 	std_paths.h.in			\
 	usrp_dbid.dat
 
-BUILT_SOURCES += $(abs_top_builddir)/usrp/host/include/usrp/usrp_dbid.h
+BUILT_SOURCES += $(top_builddir)/usrp/host/include/usrp/usrp_dbid.h
 
 BUILT_SOURCES += usrp_dbid.cc \
 		 usrp_dbid.py

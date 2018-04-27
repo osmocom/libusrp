@@ -96,11 +96,11 @@ VOLK_LA = @volk_LA@
 
 # How to link in the USRP library from inside the tree
 USRP_INCLUDES = \
-	-I$(abs_top_srcdir)/host/include \
-	-I$(abs_top_builddir)/host/include \
-	-I$(abs_top_srcdir)/firmware/include \
+	-I$(top_srcdir)/host/include \
+	-I$(top_builddir)/host/include \
+	-I$(top_srcdir)/firmware/include \
 	$(NULL)
-USRP_LA = $(abs_top_builddir)/host/lib/libusrp.la
+USRP_LA = $(top_builddir)/host/lib/libusrp.la
 
 # How to link the gcell library from inside the tree (the PPU part)
 GCELL_INCLUDES = @gcell_INCLUDES@
@@ -111,13 +111,13 @@ GCELL_SPU_INCLUDES = @gcell_spu_INCLUDES@
 GCELL_SPU_LA = @gcell_spu_LA@
 
 # libtool aware wrapper for ppu-embedspu
-GCELL_EMBEDSPU_LIBTOOL = @abs_top_srcdir@/gcell/lib/runtime/gcell-embedspu-libtool
+GCELL_EMBEDSPU_LIBTOOL = @top_srcdir@/gcell/lib/runtime/gcell-embedspu-libtool
 
 # Fix for BSD make not defining $(RM).  We define it now in configure.ac
 # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
 RM=$(RM_PROG) -f
 
-RUN_GUILE = GUILE_LOAD_PATH="@abs_top_srcdir@/gruel/src/scheme" @GUILE@ -e main -s
+RUN_GUILE = GUILE_LOAD_PATH="@top_srcdir@/gruel/src/scheme" @GUILE@ -e main -s
 
 # Base directory for example applications
 exampledir = $(datadir)/gnuradio/examples

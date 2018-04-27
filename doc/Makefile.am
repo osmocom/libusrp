@@ -27,6 +27,8 @@ SUBDIRS = other
 man3dir = $(mandir)/man3
 usrp_docdir  = $(prefix)/share/doc/usrp-$(DOCVER)
 
+if HAVE_DOXYGEN
+
 EXTRA_DIST += 			\
 	Doxyfile.in		\
 	ddc.eps			\
@@ -49,7 +51,7 @@ dist_usrp_doc_DATA = $(top_srcdir)/README
 dox: html/index.html
 html/index.html:
 	$(MKDIR_P) html
-	@DOXYGEN@
+	$(DOXYGEN) Doxyfile
 
 docbook-html: usrp_guide.html
 
@@ -65,7 +67,9 @@ install-data-local:
 	cp -r html $(DESTDIR)$(usrp_docdir)
 
 uninstall-local:
-	$(RM) -fr $(DESTDIR)$(usrp_docdir)/html
+	rm -rf $(DESTDIR)$(usrp_docdir)/html
 
 clean-local:
-	$(RM) -fr latex html man xml $(DOCBOOK_HTML_FILES)
+	rm -rf latex html man xml $(DOCBOOK_HTML_FILES)
+
+endif HAVE_DOXYGEN

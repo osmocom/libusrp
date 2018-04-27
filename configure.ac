@@ -62,6 +62,15 @@ AM_PATH_PYTHON
 AM_CONDITIONAL([PYTHON], [test x$enable_python = xyes])
 AM_CONDITIONAL([GUILE], [test x$enable_guile = xyes])
 
+AC_ARG_ENABLE(doxygen,
+	[AS_HELP_STRING(
+		[--disable-doxygen],
+		[Disable generation of documentation using doxygen],
+	)],
+	[doxygen=$enableval], [doxygen="yes"])
+AC_PATH_PROG(DOXYGEN,doxygen,false)
+AM_CONDITIONAL(HAVE_DOXYGEN, test $DOXYGEN != false && test "x$doxygen" = "xyes")
+
 AC_CHECK_PROG([XMLTO],[xmlto],[yes],[])
 AM_CONDITIONAL([HAS_XMLTO], [test x$XMLTO = xyes])
 
@@ -83,10 +92,6 @@ AC_CONFIG_FILES([
   host/apps/Makefile
   firmware/Makefile
   firmware/include/Makefile
-  firmware/lib/Makefile
-  firmware/src/Makefile
-  firmware/src/common/Makefile
-  firmware/src/usrp2/Makefile
   fpga/Makefile
   fpga/rbf/Makefile
   fpga/rbf/rev2/Makefile
