@@ -21,7 +21,7 @@ AC_DEFUN([USRP_SDCC],
 [
 	sdccok=yes
 	AC_CHECK_PROG(XCC, sdcc, sdcc -mmcs51 --no-xinit-opt,no)
-	AC_CHECK_PROG(XAS, asx8051, asx8051 -plosgff,no)
+	AC_CHECK_PROG(XAS, sdas8051, sdas8051 -plosgff,no)
 
 	if test "$XCC" = "no" -o "$XAS" = "no" ; then
 		AC_MSG_RESULT([USRP requires sdcc version 2. sdcc not found. See http://sdcc.sf.net])
