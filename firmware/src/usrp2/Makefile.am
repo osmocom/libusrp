@@ -54,10 +54,10 @@ EXTRA_DIST =			\
 
 
 DEFINES=-DHAVE_USRP2
-FW_INCLUDES=-I$(top_srcdir)/usrp/firmware/include \
-         -I$(top_srcdir)/usrp/firmware/src/usrp2 \
-	 -I$(top_srcdir)/usrp/firmware/src/common \
-	 -I$(top_builddir)/usrp/firmware/src/common
+FW_INCLUDES=-I$(top_srcdir)/firmware/include \
+         -I$(top_srcdir)/firmware/src/usrp2 \
+	 -I$(top_srcdir)/firmware/src/common \
+	 -I$(top_builddir)/firmware/src/common
 
 # with EA = 0, the FX2 implements a portion of the 8051 "external memory"
 # on chip.  This memory is mapped like this:

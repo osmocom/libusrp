@@ -30,7 +30,7 @@ EXTRA_DIST = 		\
 
 
 DEFINES=
-FW_INCLUDES=-I$(top_srcdir)/usrp/firmware/include
+FW_INCLUDES=-I$(top_srcdir)/firmware/include
 
 # with EA = 0, the FX2 implements a portion of the 8051 "external memory"
 # on chip.  This memory is mapped like this:
