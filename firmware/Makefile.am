@@ -19,5 +19,4 @@
 # Boston, MA 02110-1301, USA.
 # 
 
-SUBDIRS = include
-# compilation broken: SUBDIR += lib src
+SUBDIRS = include lib src
