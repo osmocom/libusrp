@@ -6,6 +6,7 @@
 /*.rel
 /*.rst
 /*.sym
+/*.lk
 /blink_leds.asm
 /usrp_common.asm
 /command_loop.asm
