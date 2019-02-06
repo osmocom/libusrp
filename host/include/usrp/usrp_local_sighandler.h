@@ -55,7 +55,7 @@ public:
   ~usrp_local_sighandler ();
 
   /* throw usrp_signal (signum) */
-  static void throw_signal (int signum) throw (usrp_signal);
+  static void throw_signal (int signum);
 };
 
 #endif /* INCLUDED_USRP_LOCAL_SIGHANDLER_H */

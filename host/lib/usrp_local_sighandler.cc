@@ -64,7 +64,7 @@ usrp_local_sighandler::~usrp_local_sighandler ()
 }
 
 void
-usrp_local_sighandler::throw_signal(int signum) throw(usrp_signal)
+usrp_local_sighandler::throw_signal(int signum)
 {
   throw usrp_signal (signum);
 }
