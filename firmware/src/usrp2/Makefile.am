@@ -159,7 +159,7 @@ DISTCLEANFILES = 	\
 all: usrp_gpif.c
 
 usrp_gpif.c usrp_gpif_inline.h : gpif.c
-	srcdir=$(srcdir) $(PYTHON) $(srcdir)/edit-gpif $(srcdir)/gpif.c usrp_gpif.c usrp_gpif_inline.h
+	srcdir=$(srcdir) $(srcdir)/edit-gpif $(srcdir)/gpif.c usrp_gpif.c usrp_gpif_inline.h
 
 
 # dependencies
