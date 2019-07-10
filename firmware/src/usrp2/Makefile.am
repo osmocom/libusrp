@@ -146,7 +146,7 @@ std.ihx: $(USRP_OBJS) $(LIBDEP)
 	$(XCC) $(LINKOPTS) -o $@ $(USRP_OBJS)
 
 CLEANFILES = 		\
-	*.ihx *.lnk *.lst *.map *.mem *.rel *.rst *.sym *.asm *.lib	\
+	*.ihx *.lnk *.lst *.map *.mem *.rel *.rst *.sym *.asm *.lib *.lk	\
 	usrp_gpif.c usrp_gpif_inline.h \
 	burn-usrp2-eeprom	\
 	burn-usrp4-eeprom
