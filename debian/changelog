@@ -1,3 +1,34 @@
+libusrp (3.4.3) unstable; urgency=medium
+
+  [ Pau Espin Pedrol ]
+  * build: use correct python version in generate_regs.py
+  * debian/rules: Don't overwrite .tarball-version
+  * build_eeprom.py: Fix build for distros with python3 as default
+  * edit-gpif: Fix build for distros with python3 as default
+  * Remove trailing whitespace
+  * Use release helper from libosmocore
+  * configure.ac: Use git-version-gen
+
+  [ Harald Welte ]
+  * firmware: Fix include directory path names
+  * firmware: Port to more modern SDCC syntax.
+  * Re-enable build of usrp FX2 firmware
+  * debian: Make sure the FX2 firmware is packaged
+  * debian: Add 'sdcc' package to BuildDepends
+
+  [ Max ]
+  * Add config for git-review
+
+  [ Alexander Huemer ]
+  * usrp2: firmware: ignore .lk build artifacts
+  * Avoid compiler warning 'dynamic exception specifications are deprecated in C++11 [-Wdeprecated]'
+
+  [ Oliver Smith ]
+  * firmware/src/usrp2/Makefile.am: fix "distcheck"
+  * contrib/jenkins.sh: run "make {distcheck,maintainer-clean}"
+
+ -- Pau Espin Pedrol <pespin@sysmocom.de>  Wed, 07 Aug 2019 12:12:21 +0200
+
 libusrp (3.4.2) unstable; urgency=medium
 
   * Initial release
