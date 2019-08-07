@@ -1,4 +1,7 @@
-AC_INIT([libusrp], [3.4.2])
+AC_INIT([libusrp],
+	m4_esyscmd([./git-version-gen .tarball-version]),
+	[openbsc@lists.osmocom.org])
+
 AM_INIT_AUTOMAKE([foreign subdir-objects silent-rules])
 AM_SILENT_RULES([yes])
 
