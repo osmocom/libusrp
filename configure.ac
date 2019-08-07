@@ -31,7 +31,7 @@ dnl AX_BOOST_TEST_EXEC_MONITOR
 dnl AX_BOOST_UNIT_TEST_FRAMEWORK
 dnl AX_BOOST_WSERIALIZATION
 
-# Allow user to choose whether to generate SWIG/Python 
+# Allow user to choose whether to generate SWIG/Python
 # Default is enabled
 AC_ARG_ENABLE([python],
   [AS_HELP_STRING([--enable-python],
