@@ -33,3 +33,5 @@ SUBDIRS = host fpga doc firmware
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \
 	usrp.pc
+
+@RELMAKE@

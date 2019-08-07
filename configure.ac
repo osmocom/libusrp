@@ -4,6 +4,10 @@ AM_SILENT_RULES([yes])
 
 AC_CONFIG_MACRO_DIRS([m4])
 
+dnl include release helper
+RELMAKE='-include osmo-release.mk'
+AC_SUBST([RELMAKE])
+
 AC_PROG_CXX
 
 LT_INIT([pic-only disable-static])
