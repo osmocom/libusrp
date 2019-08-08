@@ -26,12 +26,19 @@ ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST += \
 	usrp.pc.in \
 	usrp.iss.in \
-	usrp.inf
+	usrp.inf \
+	.version
 
 SUBDIRS = host fpga doc firmware
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \
 	usrp.pc
+
+BUILT_SOURCES = $(top_srcdir)/.version
+$(top_srcdir)/.version:
+	echo $(VERSION) > $@-t && mv $@-t $@
+dist-hook:
+	echo $(VERSION) > $(distdir)/.tarball-version
 
 @RELMAKE@
