@@ -13,14 +13,10 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
-# Please submit bugfixes or comments via https://bugs.opensuse.org/
-#
-
-
 %define sover   -3_4_4+git_20190808-0
 %define libname libusrp%{sover}
 Name:           libusrp
-Version:        3.4.4+git.20190808
+Version:        @VERSION@
 Release:        0
 Summary:        Stand-alone libusrp for USRP1 from old gnuradio.git
 License:        GPL-3.0-or-later

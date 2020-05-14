@@ -110,4 +110,4 @@ AC_CONFIG_FILES([
   fpga/rbf/rev2/Makefile
   fpga/rbf/rev4/Makefile
 ])
-AC_OUTPUT
+AC_OUTPUT([contrib/libusrp.spec])
