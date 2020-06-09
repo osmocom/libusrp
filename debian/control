@@ -9,6 +9,7 @@ Build-Depends: debhelper (>=9),
                doxygen,
                libtool,
                pkg-config,
+               python,
                sdcc,
                libusb-1.0-0-dev,
                libboost-all-dev
