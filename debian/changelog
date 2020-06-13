@@ -1,3 +1,21 @@
+libusrp (3.4.5) unstable; urgency=medium
+
+  [ Pau Espin Pedrol ]
+  * jenkins.sh: Workaround race conditon in make
+  * m4/ax_boost_base.m4: Update to newest version from autoconf-archive
+  * m4/ax_boost_base.m4: Fix debian multiarch_libsubdir path for arch armv7l
+
+  [ Oliver Smith ]
+  * contrib: import RPM spec
+  * contrib: integrate RPM spec
+  * Makefile.common: LTVERSIONFLAGS: remove -release
+  * Makefile.am: EXTRA_DIST: debian, contrib/*.spec.in
+
+  [ Harald Welte ]
+  * debian/control: Add python as BuildRequires, as edit-gpif uses it
+
+ -- Harald Welte <laforge@osmocom.org>  Sat, 13 Jun 2020 14:04:03 +0200
+
 libusrp (3.4.4) unstable; urgency=medium
 
   * debian/rules: Don't delete .tarball-version
