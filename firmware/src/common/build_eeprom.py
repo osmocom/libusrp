@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 #
 # Copyright 2004,2006 Free Software Foundation, Inc.
 # 
@@ -24,6 +24,7 @@ import re
 import sys
 import os, os.path
 from optparse import OptionParser
+from functools import reduce
 
 # USB Vendor and Product ID's
 
@@ -33,7 +34,7 @@ PID = 0x0002                            # Universal Software Radio Peripheral
 
 def hex_to_bytes (s):
     if len (s) & 0x1:
-        raise ValueError, "Length must be even"
+        raise ValueError("Length must be even")
     r = []
     for i in range (0, len(s), 2):
         r.append (int (s[i:i+2], 16))
@@ -59,17 +60,17 @@ class ihx_file (object):
         for line in file:
             line = line.strip().upper ()
             if not self.pat.match (line):
-                raise ValueError, "Invalid hex record format"
+                raise ValueError("Invalid hex record format")
             bytes = hex_to_bytes (line[1:])
             sum = reduce (lambda x, y: x + y, bytes, 0) % 256
             if sum != 0:
-                raise ValueError, "Bad hex checksum"
+                raise ValueError("Bad hex checksum")
             lenx = bytes[0]
             addr = (bytes[1] << 8) + bytes[2]
             type = bytes[3]
             data = bytes[4:-1]
             if lenx != len (data):
-                raise ValueError, "Invalid hex record (bad length)"
+                raise ValueError("Invalid hex record (bad length)")
             if type != 0:
                 break;
             r.append (ihx_rec (addr, type, data))
@@ -83,7 +84,7 @@ def get_code (filename):
     f = open (filename, 'r')
     ifx = ihx_file ()
     r = ifx.read (f)
-    r.sort (lambda a,b: a.addr - b.addr)
+    r.sort (key=lambda a: a.addr)
     code_start = r[0].addr
     code_end = r[-1].addr + len (r[-1].data)
     code_len = code_end - code_start
@@ -153,7 +154,7 @@ def build_shell_script (out, ihx_filename, rev, prefix):
     i2c_addr = 0x50
     rom_addr = 0x00
 
-    hex_image = map (lambda x : "%02x" % (x,), image)
+    hex_image = ["%02x" % (x,) for x in image]
 
     while (len (hex_image) > 0):
         l = min (len (hex_image), 16)

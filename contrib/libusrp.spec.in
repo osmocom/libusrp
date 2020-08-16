@@ -29,11 +29,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
 BuildRequires:  sdcc
-%if 0%{?suse_version} < 1320
-BuildRequires:  python
-%else
-BuildRequires:  python2
-%endif
+BuildRequires:  python3
 BuildRequires:  pkgconfig(libusb-1.0)
 %if 0%{?suse_version} > 1325
 BuildRequires:  libboost_date_time-devel
