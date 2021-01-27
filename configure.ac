@@ -7,6 +7,8 @@ AM_SILENT_RULES([yes])
 
 AC_CONFIG_MACRO_DIRS([m4])
 
+CFLAGS="$CFLAGS -std=gnu11"
+
 dnl include release helper
 RELMAKE='-include osmo-release.mk'
 AC_SUBST([RELMAKE])
