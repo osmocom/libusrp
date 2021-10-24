@@ -183,8 +183,8 @@ usrp_find_device (int nth, bool fx2_ok_p, libusb_context *ctx)
   // skipped if you know what you're doing.
   assert (ctx != NULL);
 
-  size_t cnt = libusb_get_device_list(ctx, &list);
-  size_t i = 0;
+  ssize_t cnt = libusb_get_device_list(ctx, &list);
+  ssize_t i = 0;
 
   if (cnt < 0)
     fprintf(stderr, "usrp: libusb_get_device_list failed: %s\n",
