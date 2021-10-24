@@ -649,7 +649,7 @@ usrp_standard_rx::determine_rx_mux_value(const usrp_subdev_spec &ss_a, const usr
 bool
 usrp_standard_rx::set_rx_freq (int channel, double freq)
 {
-  if (channel < 0 || channel > MAX_CHAN)
+  if (channel < 0 || channel >= MAX_CHAN)
     return false;
 
   unsigned int v =
