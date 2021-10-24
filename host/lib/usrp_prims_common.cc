@@ -85,7 +85,7 @@ find_file (const char *filename, int hw_rev)
 }
 
 static const char *
-get_proto_filename(const std::string user_filename, const char *env_var, const char *def)
+get_proto_filename(const std::string &user_filename, const char *env_var, const char *def)
 {
   if (user_filename.length() != 0)
     return user_filename.c_str();
