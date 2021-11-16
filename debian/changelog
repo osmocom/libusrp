@@ -1,3 +1,18 @@
+libusrp (3.4.6) unstable; urgency=medium
+
+  [ Oliver Smith ]
+  * configure.ac: set -std=gnu11
+
+  [ Vadim Yanitskiy ]
+  * usrp_standard: fix out-of-bounds read in set_rx_freq()
+  * usrp_prims_common: fix use-after-free in get_proto_filename()
+  * libusb_get_device_list() may return a negative number
+
+  [ Harald Welte ]
+  * migrate to python3
+
+ -- Pau Espin Pedrol <pespin@sysmocom.de>  Tue, 16 Nov 2021 11:57:22 +0100
+
 libusrp (3.4.5) unstable; urgency=medium
 
   [ Pau Espin Pedrol ]
