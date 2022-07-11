@@ -38,3 +38,5 @@
 /m4/lt*.m4
 
 contrib/libusrp.spec
+
+/.version
