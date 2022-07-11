@@ -157,6 +157,10 @@ noinst_PYTHON =				\
 	dump_data.py
 endif
 
+# Workaround for generated rule that fails and should be a no-op
+uninstall-usrppythonPYTHON:
+	$(info Skipping uninstall-usrpythonPYTHON (OS#5609))
+
 # common way for generating sources from templates when using
 # BUILT_SOURCES, using parallel build protection.
 gen_sources = $(BUILT_SOURCES)
