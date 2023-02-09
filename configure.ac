@@ -83,7 +83,7 @@ AM_CONDITIONAL(HAVE_DOXYGEN, test $DOXYGEN != false && test "x$doxygen" = "xyes"
 AC_CHECK_PROG([XMLTO],[xmlto],[yes],[])
 AM_CONDITIONAL([HAS_XMLTO], [test x$XMLTO = xyes])
 
-USRP_SDCC([3.2.0],[],[passed=no;AC_MSG_RESULT([Unable to find firmware compiler SDCC 3.x.])])
+USRP_SDCC([3.2.0],[],[passed=no;AC_MSG_ERROR([Unable to find firmware compiler SDCC 3.x.])])
 
 AC_CONFIG_FILES([
   Makefile
