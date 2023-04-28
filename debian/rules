@@ -9,8 +9,9 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 #export DH_VERBOSE=1
 
 
+# --no-parallel: OS#3970
 %:
-	dh $@ --with autoreconf --fail-missing
+	dh $@ --with autoreconf --fail-missing --no-parallel
 
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-doxygen
