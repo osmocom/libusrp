@@ -4,6 +4,6 @@ set -ex
 
 autoreconf --install --force
 ./configure
-$MAKE # Parallel make fails ocsasionally, see OS#3970.
+$MAKE # Parallel make fails occasionally, see OS#3970.
 $MAKE distcheck
 $MAKE maintainer-clean
