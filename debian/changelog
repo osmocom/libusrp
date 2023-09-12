@@ -1,3 +1,18 @@
+libusrp (3.4.8) unstable; urgency=medium
+
+  [ Oliver Smith ]
+  * configure: abort if SDCC is not found
+  * debian: set compat level to 10
+  * Cosmetic: contrib/jenkins.sh: fix typo
+  * debian/rules: don't build in parallel
+
+  [ Pau Espin Pedrol ]
+  * linter: Don't check header files
+  * cosmetic: fx2regs.h: Fix trailing whitespace
+  * Fix compilation with newer sdcc
+
+ -- Pau Espin Pedrol <pespin@sysmocom.de>  Tue, 12 Sep 2023 12:28:51 +0200
+
 libusrp (3.4.7) unstable; urgency=medium
 
   [ Oliver Smith ]
