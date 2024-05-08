@@ -29,7 +29,7 @@ EXTRA_DIST += \
 	usrp.inf \
 	.version \
 	debian \
-	contrib/libusrp.spec.in
+	$(NULL)
 
 SUBDIRS = host fpga doc firmware
 
