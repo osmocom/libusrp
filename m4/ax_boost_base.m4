@@ -124,6 +124,7 @@ AC_DEFUN([_AX_BOOST_BASE_RUNDETECT],[
     AS_CASE([${host_cpu}],
       [i?86],[multiarch_libsubdir="lib/i386-${host_os}"],
       [armv7l],[multiarch_libsubdir="lib/arm-${host_os}"],
+      [armv8l],[multiarch_libsubdir="lib/arm-${host_os}"],
       [multiarch_libsubdir="lib/${host_cpu}-${host_os}"]
     )
 
