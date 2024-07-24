@@ -1,3 +1,10 @@
+libusrp (3.4.9) unstable; urgency=medium
+
+  * contrib: remove rpm spec file
+  * m4/ax_boost_base.m4: Fix debian multiarch_libsubdir path for armv8l
+
+ -- Oliver Smith <osmith@sysmocom.de>  Wed, 24 Jul 2024 14:34:15 +0200
+
 libusrp (3.4.8) unstable; urgency=medium
 
   [ Oliver Smith ]
