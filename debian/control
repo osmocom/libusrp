@@ -32,7 +32,8 @@ Description: gnuradio based driver library for the USRP1 SDR
 Package: libusrp-dev
 Section: libdevel
 Architecture: any
-Depends: libusrp1 (= ${binary:Version}), ${misc:Depends}
+Depends: libusrp1 (= ${binary:Version}), ${misc:Depends},
+         libusb-1.0-0-dev
 Description: gnuradio based driver library for the USRP1 SDR - dev files
 
 Package: libusrp-firmware
