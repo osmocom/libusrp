@@ -1,3 +1,9 @@
+libusrp (3.4.10) unstable; urgency=medium
+
+  * debian/control: add missing deps to -dev pkg
+
+ -- Oliver Smith <osmith@sysmocom.de>  Wed, 12 Feb 2025 11:52:14 +0100
+
 libusrp (3.4.9) unstable; urgency=medium
 
   * contrib: remove rpm spec file
