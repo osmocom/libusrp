@@ -40,3 +40,4 @@
 contrib/libusrp.spec
 
 /.version
+/host/include/usrp/version.h

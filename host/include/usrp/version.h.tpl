@@ -1,0 +1,16 @@
+#pragma once
+
+#define LIBUSRP_VERSION {{VERSION}}
+#define LIBUSRP_VERSION_STR "{{VERSION}}"
+
+#define LIBUSRP_VERSION_MAJOR {{VERSION_MAJOR}}
+#define LIBUSRP_VERSION_MINOR {{VERSION_MINOR}}
+#define LIBUSRP_VERSION_PATCH {{VERSION_PATCH}}
+
+#define LIBUSRP_VERSION_GREATER_EQUAL(major, minor, patch) \
+	(LIBUSRP_VERSION_MAJOR > (major) || \
+	 (LIBUSRP_VERSION_MAJOR == (major) && \
+	  LIBUSRP_VERSION_MINOR > (minor)) || \
+	 (LIBUSRP_VERSION_MAJOR == (major) && \
+	  LIBUSRP_VERSION_MINOR == (minor) && \
+	  LIBUSRP_VERSION_PATCH >= (patch)))
